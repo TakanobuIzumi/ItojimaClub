@@ -1,5 +1,7 @@
 {
   "name": "ItojimaClubIonic",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
