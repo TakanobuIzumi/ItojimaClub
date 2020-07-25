@@ -1,0 +1,10 @@
+■SELECT文の内部的な実行順序
+
+FROM
+WHERE
+GROUP BY
+HAVING
+SELECT
+ORDER BY
+
+※ORDER BYでは、SELECT句でつけた別名を利用できる
