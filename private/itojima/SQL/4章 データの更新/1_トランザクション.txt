@@ -1,0 +1,26 @@
+■トランザクションについて
+
+・トランザクション開始文
+
+SQLServer、PostgreSQL
+　BEGIN TRANSACTION
+
+MySQL
+　START TRANSACTION
+
+Oracle、DB2
+　なし
+
+・トランザクション終了文
+
+すべてのRDBMSで共通
+　COMMIT	：処理の確定
+　ROLLBACK	：処理の取り消し
+
+
+・ACID特性
+　トランザクションが守るべき4つの特性
+　・Atomicity(原子性)
+　・Consistency(一貫性)
+　・Isolation(独立性)
+　・Durability(永続性)
