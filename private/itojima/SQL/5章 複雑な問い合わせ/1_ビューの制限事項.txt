@@ -1,0 +1,20 @@
+■ビューの制限事項
+
+1．ビュー定義にはORDER BY句は使えない
+
+CREATE VIEW ShohinSum (shohin_bunrui, cnt_shohin)
+AS
+SELECT		shohin_bunrui, COUNT(*)
+FROM		Shohin
+GROUP BY	shohin_bunrui
+ORDER BY	shohin_bunrui;	/* ORDER BY句は使えない */
+
+2．ビューに対する更新
+
+ビュー定義のSELECT文において、いくつかの条件を満たしている場合、
+ビューに対する更新が可能
+
+①SELECT句にDISTINCTが含まれていない
+②FROM句に含まれるテーブルが一つだけ
+③GROUP BY句を使用していない
+④HAVING句を使用していない
