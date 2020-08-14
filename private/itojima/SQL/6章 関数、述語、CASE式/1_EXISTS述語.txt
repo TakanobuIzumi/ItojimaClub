@@ -1,0 +1,18 @@
+■EXISTS述語
+
+ある条件に合致するレコードの存在有無を調べる。
+レコードが存在すれば真、存在しなければ偽を返す。
+
+-- EXISTSで大阪店(000C)においてある商品の販売単価を求める
+SELECT	shohin_mei, hanbai_tanka
+FROM	Shohin AS S
+WHERE	EXISTS (
+			SELECT	*
+			FROM	TenpoShohin AS TS
+			WHERE	TS.tenpo_id = '000C' AND TS.shohin_id = S.shohin_id);
+
+※EXISTSは一つだけ引数を指定できる。
+　引数は常に相関サブクエリとなる
+
+※EXISTSの引数のサブクエリには常に「SELECT *」を使う。
+　(EXISTSはレコードの存在有無しか見ないため、どんな列が返されるかを気にしない)
